@@ -1,65 +1,64 @@
+
+import Link from "next/link";
 type ProductCardProps = {
-    name: string;
-    price: string;
-    unit: string;
-    change: string;
-    emoji: string;
-    direction: "up" | "down";
+  slug: string;
+  name: string;
+  price: string;
+  unit: string;
+  change: string;
+  emoji: string;
+  direction: "up" | "down" | "flat";
 };
-
 export default function ProductCard({
-    name,
-    price,
-    unit,
-    change,
-    emoji,
-    direction,
+  slug,
+  name,
+  price,
+  unit,
+  change,
+  emoji,
+  direction,
 }: ProductCardProps) {
-    const isUp = direction === "up";
+  const changeColor =
+    direction === "up"
+      ? "text-red-600 bg-red-50"
+      : direction === "down"
+        ? "text-green-600 bg-green-50"
+        : "text-gray-600 bg-gray-100";
 
-    return (
-        <div className="rounded-2xl border border-gray-200 bg-white p-4">
-            {/* Top */}
-            <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gray-50 text-2xl">
-                        {emoji}
-                    </div>
+  const arrow =
+    direction === "up" ? "↑" : direction === "down" ? "↓" : "—";
 
-                    <div>
-                        <h3 className="font-semibold text-gray-900">
-                            {name}
-                        </h3>
-
-                        <p className="mt-0.5 text-xs text-gray-500">
-                            প্রতি {unit}
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Bottom */}
-            <div className="mt-5 flex items-end justify-between">
-                <div>
-                    <p className="text-xs text-gray-500">
-                        আজকের দাম
-                    </p>
-
-                    <p className="mt-1 text-xl font-bold text-gray-900">
-                        {price} <span className="text-sm font-medium">টাকা</span>
-                    </p>
-                </div>
-
-                <span
-                    className={`rounded-full px-2.5 py-1 text-xs font-medium ${
-                        isUp
-                            ? "bg-red-50 text-red-500"
-                            : "bg-green-50 text-green-600"
-                    }`}
-                >
-                    {isUp ? "▲" : "▼"} {change}
-                </span>
-            </div>
+  return (
+    <Link
+      href={`/product/${slug}`}
+      className="block rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gray-50 text-2xl">
+          {emoji}
         </div>
-    );
+
+        <span
+          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${changeColor}`}
+        >
+          {arrow} {change}%
+        </span>
+      </div>
+
+      <h3 className="mt-4 font-bold text-gray-900">{name}</h3>
+
+      <p className="mt-1 text-sm text-gray-500">প্রতি {unit}</p>
+
+      <div className="mt-3 flex items-baseline gap-1">
+        <span className="text-sm font-medium text-gray-500">৳</span>
+        <span className="text-2xl font-extrabold text-gray-900">
+          {price}
+        </span>
+      </div>
+
+      <p className="mt-3 text-sm font-medium text-gray-500">
+        বিস্তারিত দেখুন →
+      </p>
+    </Link>
+  );
 }

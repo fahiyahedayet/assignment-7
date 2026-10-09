@@ -3,16 +3,16 @@ import ProductCard from "./ProductCard";
 
 type Product = {
   id: number;
+  slug: string; 
   nameBn: string;
   image: string;
-  unit: string;
   today: number;
+  unit: string ;
   change: {
     dir: "up" | "down" | "flat";
     pct: number;
   };
 };
-
 const toBanglaNumber = (value: number | string) =>
   String(value).replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
 
@@ -29,38 +29,27 @@ export default async function PriceSection() {
     "https://api.abcz.workers.dev/api/bazardor/products",
     { cache: "no-store" }
   );
-
-  if (!response.ok) {
+  if (!response.ok ) {
     throw new Error("Failed to fetch today's prices");
   }
 
-  const products: Product[] = await response.json();
+  const  products: Product[] = await response.json();
 
   const risingProducts = products
-    .filter((product) => product.change.dir === "up")
-    .slice(0, 6);
+    .filter((product) => product.change.dir === "up") .slice(0, 6);
 
   const fallingProducts = products
-    .filter((product) => product.change.dir === "down")
-    .slice(0, 6);
-
+    .filter((product) => product.change.dir === "down") .slice(0, 6);
   return (
     <section className="bg-[#f5f8f5]">
       <div className="mx-auto max-w-[1050px] px-4 py-12">
-        <h2 className="text-2xl font-bold text-gray-900">
-          <span className="text-red-500">▲</span> আজ দাম বেড়েছে
+        <h2 className="text-2xl font-bold text-gray-900">  <span className="text-red-500">▲</span> আজ দাম বেড়েছে
         </h2>
 
         <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {risingProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.nameBn}
-              price={toBanglaNumber(product.today)}
-              unit={unitMap[product.unit] ?? product.unit}
-              change={`${toBanglaNumber(Math.abs(product.change.pct))}%`}
-              emoji={product.image}
-              direction="up"
+            <ProductCard  slug={product.slug} key={product.id} name={product.nameBn}
+              price={toBanglaNumber(product.today)}  unit={unitMap[product.unit] ?? product.unit} change={`${toBanglaNumber(Math.abs(product.change.pct))}%`}  emoji={product.image} direction={product.change.dir}
             />
           ))}
         </div>
@@ -71,14 +60,8 @@ export default async function PriceSection() {
 
         <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {fallingProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.nameBn}
-              price={toBanglaNumber(product.today)}
-              unit={unitMap[product.unit] ?? product.unit}
-              change={`${toBanglaNumber(Math.abs(product.change.pct))}%`}
-              emoji={product.image}
-              direction="down"
+            <ProductCard slug={product.slug}  key={product.id}  name={product.nameBn}  price={toBanglaNumber(product.today)}  unit={unitMap[product.unit] ?? product.unit}
+              change={`${toBanglaNumber(Math.abs(product.change.pct))}%`} emoji={product.image}  direction={product.change.dir}
             />
           ))}
         </div>
