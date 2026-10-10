@@ -64,7 +64,7 @@ export default async function ProductDetailsPage({ params }: PageProps) {
   const { slug } = await params;
 
   const listResponse = await fetch(
-    "https://api.abcz.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
     { cache: "no-store" }
   );
 
@@ -82,7 +82,7 @@ export default async function ProductDetailsPage({ params }: PageProps) {
   }
 
   const detailResponse = await fetch(
-    `https://api.abcz.workers.dev/api/bazardor/products/${matchingProduct.id}`,
+    `https://openapi.programming-hero.com/api/bazardor/products/${matchingProduct.id}`,
     { cache: "no-store" }
   );
 

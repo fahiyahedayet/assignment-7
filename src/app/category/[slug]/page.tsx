@@ -59,11 +59,11 @@ async function CategoryContent({ params }: PageProps) {
     const { slug } =await params;
 
     const [categoryResponse, productsResponse] = await Promise.all([
-        fetch(`https://api.abcz.workers.dev/api/bazardor/categories/${slug}`, {
+        fetch(`https://openapi.programming-hero.com/api/bazardor/categories/${slug}`, {
             cache: "no-store",
         }),
         fetch(
-            `https://api.abcz.workers.dev/api/bazardor/products?category=${encodeURIComponent(slug)}`,
+            `https://openapi.programming-hero.com/api/bazardor/products?category=${encodeURIComponent(slug)}`,
             { cache: "no-store" }
         ),
     ]);

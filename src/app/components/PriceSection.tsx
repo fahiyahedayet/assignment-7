@@ -26,7 +26,7 @@ const unitMap: Record<string, string> = {
 
 export default async function PriceSection() {
   const response = await fetch(
-    "https://api.abcz.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
     { cache: "no-store" }
   );
   if (!response.ok ) {

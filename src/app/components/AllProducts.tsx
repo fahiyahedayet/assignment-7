@@ -18,7 +18,7 @@ type Product = {
     };
 };
 export default async function AllProducts() {
-    const response = await fetch(  "https://api.abcz.workers.dev/api/bazardor/products",
+    const response = await fetch(  "https://openapi.programming-hero.com/api/bazardor/products",
         { cache: "no-store", }
     );
     if (!response.ok) {
