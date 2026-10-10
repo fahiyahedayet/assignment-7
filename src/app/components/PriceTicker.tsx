@@ -21,10 +21,7 @@ export default function PriceTicker() {
                                 <span>{item.name}</span>
                                 <span className="font-semibold text-gray-900"> {item.price} টাকা/{item.unit}
                                 </span>
-                                <span
-                                    className={
-                                        item.direction === "up" ? "text-green-600" : "text-red-500"
-                                    }
+                                <span className={ item.direction === "up" ? "text-green-600" : "text-red-500"  }
                                 >
                                     {item.direction === "up" ? "▲" : "▼"} {item.change}
                                 </span>

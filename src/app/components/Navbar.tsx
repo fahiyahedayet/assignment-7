@@ -38,6 +38,20 @@ export default function Navbar() {
 
     fetchCategories();
   }, []);
+const [today, setToday] = useState("");
+  useEffect(() => {
+  const date = new Date();
+
+  const formattedDate = new Intl.DateTimeFormat("bn-BD", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Asia/Dhaka",
+  }).format(date);
+
+  setToday(formattedDate);
+}, []);
 
   return (
     <header className="bg-white">
@@ -45,20 +59,13 @@ export default function Navbar() {
         <div className="mx-auto flex h-[60px] max-w-[1050px] items-center justify-between gap-3 px-4">
           <Link href="/" className="flex shrink-0 items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-600">
-              <img
-                src="/logo-icon.png"
-                alt="Bazar Dor logo"
-                className="h-7 w-7"
-              />
+              <img src="/logo-icon.png"  alt="Bazar Dor logo" className="h-7 w-7" />
             </div>
-
             <div>
-              <h1 className="text-xl font-bold leading-none text-gray-900">
-                বাজার দর
-              </h1>
+              <h1 className="text-xl font-bold leading-none text-gray-900">  বাজার দর </h1>
 
               <p className="mt-1 text-[10px] text-gray-500">
-                সোমবার, ৬ অক্টোবর, ২০২৬
+                {today}
               </p>
             </div>
           </Link>

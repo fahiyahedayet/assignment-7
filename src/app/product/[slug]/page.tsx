@@ -3,6 +3,10 @@ import { connection } from "next/server";
 import { notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import PriceTicker from "../../components/PriceTicker";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { auth } from "@/lib/auth";
+import Footer from "../../components/Footer";
 
 type Product = {
   id: number;
@@ -50,6 +54,13 @@ const unitMap: Record<string, string> = {
 };
 
 export default async function ProductDetailsPage({ params }: PageProps) {
+  const session = await auth.api.getSession({
+  headers: await headers(),
+ });
+
+ if (!session) {
+  redirect("/sign-in");
+ }
   const { slug } = await params;
 
   const listResponse = await fetch(
@@ -215,6 +226,7 @@ export default async function ProductDetailsPage({ params }: PageProps) {
             </div>
           </section>
         </div>
+        <Footer />
       </main>
     </>
   );

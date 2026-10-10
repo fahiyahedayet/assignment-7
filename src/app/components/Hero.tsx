@@ -17,7 +17,7 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-1 justify-center">
                     <div className="flex h-64 w-full max-w-md items-center justify-center rounded-3xl bg-green-100 text-8xl md:h-80">
-                        🛒
+                        <img src="/bazar-hero.png" alt="Hero Image" className="h-full w-full object-cover rounded-3xl" />
                     </div>
                 </div>
 
