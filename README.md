@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Bazar Dor — বাজার দর
 
-## Getting Started
+**Essential commodity prices at a glance.**
 
-First, run the development server:
+Bazar Dor is a responsive web application that helps users explore essential product prices, compare market rates, and stay informed about price changes. The application provides product-wise pricing information in Bangla, making market data easier to understand and access.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌐 Live Demo
+
+- **Live Website:** [Add your deployed website URL here]
+- **GitHub Repository:** [Add your GitHub repository URL here]
+
+## ✨ Features
+
+- **Live Product Information:** Browse essential products and their available pricing information through an API.
+- **Price Trends:** Explore products with rising and falling prices.
+- **Category-Based Browsing:** Find products by category and sort the available products.
+- **Product Details:** View today's price, minimum and maximum prices, average price, and market-wise price comparisons.
+- **User Authentication:** Create an account and sign in using Better Auth.
+- **Profile Management:** View profile information and update your name.
+- **Protected Product Details:** Require authentication to access product detail pages.
+- **Responsive Design:** Access the application on mobile, tablet, and desktop devices.
+- **Toast Notifications:** Receive feedback for authentication actions and errors.
+- **Custom 404 Page:** Display a custom page for invalid routes.
+- **Bangla Price Display:** Present product names and prices in a user-friendly Bangla interface.
+
+## 🛠️ Technologies Used
+
+- **Next.js** — React framework and App Router
+- **React** — Component-based user interface
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Responsive styling
+- **Better Auth** — Authentication and session management
+- **MongoDB Atlas** — Database for authentication-related data
+- **React Toastify** — Toast notifications
+- **React Icons** — Icons for the interface
+- **Bazar Dor API** — Product, category, and market price data
+
+## 📦 Installation and Setup
+
+### Prerequisites
+
+- Node.js
+- npm
+- MongoDB Atlas account for authentication database setup
+
+## 📡 API
+
+Bazar Dor uses the following API endpoints for product and category data:
+
+| Endpoint | Description |
+|---|---|
+| `/api/bazardor/products` | Retrieve products |
+| `/api/bazardor/products?category=chal` | Retrieve products by category |
+| `/api/bazardor/products/1` | Retrieve product details by ID |
+| `/api/bazardor/categories` | Retrieve categories |
+| `/api/bazardor/categories/chal` | Retrieve category details |
+
+**API Base URL:** `https://api.abcz.workers.dev/api/bazardor`
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/
+│   ├── api/
+│   │   └── auth/
+│   ├── category/
+│   │   └── [slug]/
+│   ├── components/
+│   ├── product/
+│   │   └── [slug]/
+│   ├── profile/
+│   │   └── update/
+│   ├── sign-in/
+│   ├── sign-up/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── not-found.tsx
+│   └── globals.css
+└── lib/
+    ├── auth.ts
+    └── auth-client.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔐 Authentication
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Authentication is implemented using Better Auth. MongoDB Atlas is used to persist authentication-related information. Authenticated users can access protected product details and manage their profile.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Social sign-in providers require their respective provider credentials and configuration.
 
-## Learn More
+## 📱 Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+The interface is designed to adapt to different screen sizes, providing a consistent browsing experience across desktop, tablet, and mobile devices.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👩‍💻 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Fahiya Binthey Hedayet**
 
-## Deploy on Vercel
+- GitHub: [Your GitHub Profile](YOUR_GITHUB_PROFILE_URL)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।*
