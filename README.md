@@ -6,22 +6,21 @@ Bazar Dor is a responsive web application that helps users explore essential pro
 
 ## 🌐 Live Demo
 
-- **Live Website:** [Add your deployed website URL here]
-- **GitHub Repository:** [Add your GitHub repository URL here]
+- **Live Website:** https://assignment-7-seven-alpha.vercel.app/
 
 ## ✨ Features
 
-- **Live Product Information:** Browse essential products and their available pricing information through an API.
-- **Price Trends:** Explore products with rising and falling prices.
-- **Category-Based Browsing:** Find products by category and sort the available products.
-- **Product Details:** View today's price, minimum and maximum prices, average price, and market-wise price comparisons.
-- **User Authentication:** Create an account and sign in using Better Auth.
-- **Profile Management:** View profile information and update your name.
-- **Protected Product Details:** Require authentication to access product detail pages.
-- **Responsive Design:** Access the application on mobile, tablet, and desktop devices.
-- **Toast Notifications:** Receive feedback for authentication actions and errors.
-- **Custom 404 Page:** Display a custom page for invalid routes.
-- **Bangla Price Display:** Present product names and prices in a user-friendly Bangla interface.
+- **🛒 Live Product Information** — Browse essential grocery products and their pricing information fetched from an API.
+- **📈 Price Trends** — Track products with rising and falling prices to understand market changes.
+- **📂 Category-Based Browsing** — Explore products by category and sort listings to find what you need.
+- **📊 Detailed Price Insights** — View current, minimum, maximum, and average prices, along with market-wise price comparisons.
+- **🔐 Secure Authentication** — Sign up and sign in with Better Auth.
+- **👤 Profile Management** — View your account information and update your profile name.
+- **🛡️ Protected Routes** — Restrict access to product detail pages to authenticated users.
+- **📱 Fully Responsive Design** — Enjoy a consistent experience across mobile, tablet, and desktop devices.
+- **🔔 Toast Notifications** — Receive clear feedback for authentication actions, successful operations, and errors.
+- **🚧 Custom 404 Page** — Display a dedicated not-found page for invalid routes.
+- **🇧🇩 Bangla-Friendly Interface** — Present product information and prices in a user-friendly Bengali interface.
 
 ## 🛠️ Technologies Used
 
@@ -35,14 +34,6 @@ Bazar Dor is a responsive web application that helps users explore essential pro
 - **React Icons** — Icons for the interface
 - **Bazar Dor API** — Product, category, and market price data
 
-## 📦 Installation and Setup
-
-### Prerequisites
-
-- Node.js
-- npm
-- MongoDB Atlas account for authentication database setup
-
 ## 📡 API
 
 Bazar Dor uses the following API endpoints for product and category data:
@@ -55,7 +46,7 @@ Bazar Dor uses the following API endpoints for product and category data:
 | `/api/bazardor/categories` | Retrieve categories |
 | `/api/bazardor/categories/chal` | Retrieve category details |
 
-**API Base URL:** `https://api.abcz.workers.dev/api/bazardor`
+**API Base URL:** `https://openapi.programming-hero.com/api/bazardor`
 
 ## 📁 Project Structure
 
@@ -92,12 +83,3 @@ Social sign-in providers require their respective provider credentials and confi
 
 The interface is designed to adapt to different screen sizes, providing a consistent browsing experience across desktop, tablet, and mobile devices.
 
-## 👩‍💻 Author
-
-**Fahiya Binthey Hedayet**
-
-- GitHub: [Your GitHub Profile](YOUR_GITHUB_PROFILE_URL)
-
----
-
-*সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।*
